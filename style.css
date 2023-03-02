@@ -57,6 +57,7 @@ input[type=checkbox] {
 .book {
     flex: 1;
     min-width: 150px;
+    max-width: 300px;
 
     background-color: darkgray;
     padding: 5px;

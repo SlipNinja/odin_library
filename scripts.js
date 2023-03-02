@@ -46,23 +46,47 @@ function createCard(book) {
     let readDisplay = book.read ? "Already read" : "Not read yet";
     let readContent = document.createTextNode(readDisplay);
     read.appendChild(readContent);
+    read.classList.add("readstatus");
+
+    let buttons = document.createElement("div");
+
+    let readBtn = document.createElement("button");
+    let readBtnText = document.createTextNode(book.read ? "Mark unread" : "Mark as read");
+    readBtn.appendChild(readBtnText);
+    readBtn.onclick = toggleRead;
 
     let delBtn = document.createElement("button");
     let delBtnText = document.createTextNode("Delete");
     delBtn.appendChild(delBtnText);
     delBtn.onclick = deleteBook;
 
+    buttons.appendChild(readBtn);
+    buttons.appendChild(delBtn);
+
     bookDisplay.appendChild(title);
     bookDisplay.appendChild(author);
     bookDisplay.appendChild(pages);
     bookDisplay.appendChild(read);
-    bookDisplay.appendChild(delBtn);
+    bookDisplay.appendChild(buttons);
 
     return bookDisplay;
 }
 
+function toggleRead(e) {
+    let buttonClicked = e.srcElement;
+    let bookDisplay = buttonClicked.parentElement.parentElement;
+    let index = bookDisplay.dataset.index;
+    let book = library[index];
+
+    book.changeReadStatus();
+
+    let readDisplay = bookDisplay.querySelector(".readstatus");
+    readDisplay.innerHTML = book.read ? "Already read" : "Not read yet";
+    buttonClicked.innerHTML = book.read ? "Mark unread" : "Mark as read";
+}
+
 function deleteBook(e) {
-    let bookToDelete = e.srcElement.parentElement;
+    let bookToDelete = e.srcElement.parentElement.parentElement;
     let index = bookToDelete.dataset.index;
 
     library.splice(index, 1);
