@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.library {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book {
+    flex: 1;
+    min-width: 150px;
+}
