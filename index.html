@@ -9,6 +9,26 @@
     <script src="./scripts.js" defer></script>
 </head>
 <body>
+    <div class="header">
+        <button onclick="showForm()" class="displayForm">ADD NEW BOOK</button>
+    </div>
+
+    <form id="addForm">
+        <label for="title">Title</label><br>
+        <input required type="text" id="title" name="title" placeholder="Lord of the rings.."><br>
+
+        <label for="author">Author</label><br>
+        <input required type="text" id="author" name="author" placeholder="Tolkien.."><br>
+
+        <label for="pages">Number of pages</label><br>
+        <input required type="number" id="pages" name="pages" placeholder="550"><br>
+
+        <label for="read">Already read</label><br>
+        <input type="checkbox" id="read" name="read">
+
+        <button id="submit-form" type="submit" value="Submit">Add book</button>
+    </form>
+
     <div class="library"></div>
 </body>
 </html>

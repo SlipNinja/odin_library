@@ -23,7 +23,7 @@ addBook("The middle earth", "Tolkien", 300, true);
 addBook("How to raise a snake", "Macaron", 666, false);
 
 library.forEach(function (book) {
-    console.log(book.info());
+    //console.log(book.info());
     let bookDisplay = document.createElement("div");
     bookDisplay.classList.add("book");
 
@@ -51,3 +51,9 @@ library.forEach(function (book) {
     let lib = document.getElementsByClassName("library")[0];
     lib.appendChild(bookDisplay);
 });
+
+function showForm() {
+    const form = document.getElementById("addForm");
+
+    form.style.display = (!form.style.display || form.style.display == "none") ? "flex" : "none";
+}
