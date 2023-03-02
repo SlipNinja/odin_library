@@ -16,6 +16,16 @@ button {
     width: 200px;
     height: 30px;
     margin: 20px;
+    border-radius: 4px;
+    border: solid gray 1px;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+button:active {
+    background-color: darkgray;
 }
 
 form button{
@@ -37,10 +47,11 @@ input[type=checkbox] {
     width: 30px;
 }
 
-.library {
+#library {
     display: flex;
     flex-wrap: wrap;
-    gap: 3px;
+    gap: 5px;
+    margin: 5px;
 }
 
 .book {
@@ -51,4 +62,14 @@ input[type=checkbox] {
     padding: 5px;
     border: solid gray 1px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book button {
+    width: 50%;
+    height: 20px;
+    font-size: 15px;
+    margin: 0;
+    align-self: center;
 }
