@@ -4,6 +4,10 @@
     font-size: 18px;
 }
 
+body {
+    background-color: lightgray;
+}
+
 form {
     margin: 20px;
     padding: 20px;
@@ -47,6 +51,10 @@ input[type=checkbox] {
     width: 30px;
 }
 
+.header {
+    background-color: rgb(97, 107, 104);
+}
+
 #library {
     display: flex;
     flex-wrap: wrap;
@@ -60,7 +68,7 @@ input[type=checkbox] {
     max-width: 300px;
 
     background-color: darkgray;
-    padding: 5px;
+    padding: 10px;
     border: solid gray 1px;
     border-radius: 10px;
     display: flex;
